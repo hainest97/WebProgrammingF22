@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Example</title>
+  <style>
+    *{
+      margin:0;
+    }
+    body {
+      background-color: #DCFAE6;
+      margin: 0;
+    }
+
+    .navbar {
+      background-color: #279C40;
+    }
+
+    .dropdown {
+      position: relative;
+      width: 100px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      display: none;
+      width: 100%;
+    }
+    .dropdown:hover {
+      background-color:#659c27;
+      cursor: pointer;
+    }
+     .dropdown:hover .dropdown-content {
+      background-color:#659c27;
+      display: block;
+      
+    }
+    .dropdown:click .dropdown-content {
+      z-index: 1;
+    }
+    
+    .dropdown-content>p {
+      padding: 5px;
+      color: blue;
+      font-size: 16px;
+    }
+    .dropdown-content>p:hover{
+      background-color:#899c27;
+      cursor: pointer;
+    }
+    .note {
+      max-width: max-content;
+      margin: 25px auto;
+      padding: 10px;
+      background-color: white;
+      justify-content: center;
+      border-left: 5px solid green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="dropdown">
+      <h3>File</h3>
+      <div class="dropdown-content">
+        <p>New</p>
+        <p>Open</p>
+        <p>Save</p>
+        <p>Print</p>
+        <p>Close</p>
+      </div>
+    </div>
+    <div class="dropdown">
+      <h3>Edit</h3>
+      <div class="dropdown-content">
+        <p>Undo</p>
+        <p>Redo</p>
+        <p>Cut</p>
+        <p>Copy</p>
+        <p>Paste</p>
+        <p>Delete</p>
+        <p>Select All</p>
+      </div>
+    </div>
+    <div class="dropdown">
+      <h3>View</h3>
+      <div class="dropdown-content">
+        <p>Zoom In</p>
+        <p>Zoom Out</p>
+        <p>Actual Size</p>
+        <p>Fit Page</p>
+        <p>Fit Width</p>
+        <p>Fit Height</p>
+        <p>Rotate Left</p>
+        <p>Rotate Right</p>
+        <p>Full Screen</p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="note">
+    <h3>Instructions</h3>
+    <p>Recreate this page using <span style="font-weight: bold;">only CSS.</span> Do yourself a favor and 1) Do not view the source. Figure it out yourself. 2) Do not search for the solution. Learn CSS until you know enough to do this.</p>
+  </div>
+</body>
+
+</html>
