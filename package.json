@@ -1,0 +1,27 @@
+{
+  "name": "webprogrammingf22",
+  "version": "1.0.0",
+  "description": "![Photo](https://github.com/hainest97/WebProgrammingInClass/blob/main/_182920_1.jfif)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "nodemon --watch server server/index.js",
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hainest97/WebProgrammingF22.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hainest97/WebProgrammingF22/issues"
+  },
+  "homepage": "https://github.com/hainest97/WebProgrammingF22#readme"
+}
