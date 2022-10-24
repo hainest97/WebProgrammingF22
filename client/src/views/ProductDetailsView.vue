@@ -1,0 +1,34 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+import { getProduct } from "@/stores/products";
+
+const route = useRoute();
+const product = ref(getProduct(+route.params.id));
+</script>
+
+<template>
+  <div v-if="product" class="section">
+    <div class="product-name">
+      <img :src="product.thumbnail" :alt="product.title" />
+    </div>
+    <div class="product-info">
+      <p class="title">{{ product.title }}</p>
+      <p class="price subtitle">
+        <span class="currency">$</span>
+        <span class="amount">{{ product.price }}</span>
+      </p>
+      <p>{{ product.description }}</p>
+      
+    </div>
+  </div>
+</template>
+<style scoped>
+.section {
+  display: flex;
+  background-color: aliceblue;
+}
+.product-info {
+  padding: 1em;
+}
+</style>

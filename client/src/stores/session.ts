@@ -16,5 +16,6 @@ export function logout(){
 export class User {
   public firstName?: string;
   public lastName?: string;
+  public token?: string;
 }
 export default session;

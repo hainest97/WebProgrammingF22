@@ -41,7 +41,7 @@ isActive.value = false;
         <div class="navbar-start">
           <router-link to="/" class="navbar-item"> Home </router-link>
 
-          <router-link to="/store" class="navbar-item"> Store </router-link>
+          <router-link to="/products" class="navbar-item"> Products </router-link>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> More </a>
