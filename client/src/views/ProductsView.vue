@@ -6,11 +6,13 @@ import { RouterLink } from "vue-router";
 const products = reactive(getProducts());
 const search = ref("");
 // IMPERATIVE PROGRAMMING
-const results = ref(products);
+// const results = ref(products);
 
-function searchProducts(){
-  results.value = products.filter((product) => product.title.toLowerCase().includes(search.value.toLowerCase()));
-}
+// function searchProducts() {
+//   results.value = products.filter((product) =>
+//     product.title.toLowerCase().includes(search.value.toLowerCase())
+//   );
+// }
 // watch(search,searchProducts);
 // FUNCTIONAL PROGRAMMING
 // const results = computed(() => products.filter((product) => product.title.toLowerCase().includes(search.value.toLowerCase())));
@@ -19,14 +21,20 @@ function searchProducts(){
 <template>
   <div>
     <div class="control">
-      <input type="text" class="input" placeholder="Search" v-model="search" @input="searchProducts"/>
+      <input
+        type="text"
+        class="input"
+        placeholder="Search"
+        v-model="search"
+      />
     </div>
     <div class="products">
       <router-link
         class="product"
-        v-for="product in results"
+        v-for="product in products"
         :key="product.id"
         :to="`/product/${product.id}`"
+        v-show="product.title.toLowerCase().includes(search.toLowerCase())"
       >
         <div class="product-name">
           <img :src="product.thumbnail" :alt="product.title" />
