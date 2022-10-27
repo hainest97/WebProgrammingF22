@@ -1,17 +1,25 @@
 <script setup lang="ts">
-import { reactive, ref, computed } from "vue";
-import { getProducts } from "../stores/products";
+import { reactive, ref, computed, watch } from "vue";
+import { getProducts, type Product } from "../stores/products";
 import { RouterLink } from "vue-router";
 
 const products = reactive(getProducts());
 const search = ref("");
-const results = computed(() => products.filter((product) => product.title.toLowerCase().includes(search.value.toLowerCase())));
+// IMPERATIVE PROGRAMMING
+const results = ref(products);
+
+function searchProducts(){
+  results.value = products.filter((product) => product.title.toLowerCase().includes(search.value.toLowerCase()));
+}
+// watch(search,searchProducts);
+// FUNCTIONAL PROGRAMMING
+// const results = computed(() => products.filter((product) => product.title.toLowerCase().includes(search.value.toLowerCase())));
 </script>
 
 <template>
   <div>
     <div class="control">
-      <input type="text" class="input" placeholder="Search" v-model="search" />
+      <input type="text" class="input" placeholder="Search" v-model="search" @input="searchProducts"/>
     </div>
     <div class="products">
       <router-link
