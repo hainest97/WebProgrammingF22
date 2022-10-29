@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FlyoutPanel from "./icons/FlyoutPanel.vue";
 import cart, {} from '../stores/cart'
+import { computed } from 'vue';
 
 const { isOpen } = defineProps<{
   isOpen: boolean;
@@ -8,12 +9,19 @@ const { isOpen } = defineProps<{
 
 function closeCart() {}
 function checkout() {}
+
+const subtotal = computed(()=> cart.reduce((total,item) => total + item.quantity * item.product.price,0));
 </script>
 
 <template>
   <FlyoutPanel :is-open="isOpen">
     <template #header>
-      <h3 class="title is-3">Cart</h3>
+      <h3 class="title is-3">Cart 
+        <small class="subtitle is-6">({{ cart.length}})</small>
+      </h3>
+      <h4 class="subtitle is-6">
+        <b>Subtotal:</b> ${{ subtotal }}
+      </h4>
     </template>
     <div>
       <div class="fly-out-body">
@@ -28,7 +36,12 @@ function checkout() {}
             <div>
               <b>{{ item.product.title }}</b>
               <div class="price">${{ item.product.price }}</div>
-              <div>x {{item.quantity}} = {{item.quantity * item.product.price}}</div>
+              <div>
+                x 
+                <select v-model="item.quantity" class="quantity">
+                  <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
+                </select>
+                 = ${{item.quantity * item.product.price}}</div>
             </div>
           </div>
         </div>
@@ -50,5 +63,12 @@ function checkout() {}
   }
   .price{
     font-size: 1em;
+  }
+
+  .quantity {
+    width: 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: aliceblue;
   }
 </style>
