@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import { addProductToCart } from "@/stores/cart";
 import { reactive, ref, computed, watch } from "vue";
 import { getProducts, type Product } from "../stores/products";
 import { RouterLink } from "vue-router";
 
 const products = reactive(getProducts());
 const search = ref("");
+function addToCart(product: Product){
+  addProductToCart(product);
+}
 // IMPERATIVE PROGRAMMING
 // const results = ref(products);
 
@@ -42,6 +46,7 @@ const search = ref("");
         <div class="product-info">
           <p>{{ product.title }}</p>
           <p>{{ product.description }}</p>
+          <button class="button is-small is-primary is-rounded add" @click.prevent="addToCart(product)">+</button>
           <p class="price">
             <span class="currency">$</span>
             <span class="amount">{{ product.price }}</span>
@@ -57,6 +62,9 @@ const search = ref("");
   display: flex;
   flex-wrap: wrap;
   background-color: aliceblue;
+}
+.add {
+  float: right;
 }
 .product {
   flex-basis: 10em;
