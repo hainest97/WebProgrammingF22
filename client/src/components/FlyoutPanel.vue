@@ -30,7 +30,7 @@ const { isOpen } = defineProps<{
   z-index: 100;
 
   transition: right 0.5s ease-in-out;
-  box-shadow: rbg(0 0 0 / 25%) -14px -0 8px;
+  box-shadow: rgb(0 0 0 / 25%) -14px -0 8px;
   overflow-y: auto;
 }
 .fly-out.is-open {

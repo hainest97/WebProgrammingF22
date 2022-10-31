@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FlyoutPanel from "./icons/FlyoutPanel.vue";
+import FlyoutPanel from './FlyoutPanel.vue';
 import cart, { updateProductQuantity} from '../stores/cart'
 import { computed } from 'vue';
 
