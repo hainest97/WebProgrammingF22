@@ -7,6 +7,8 @@ const port = process.env.PORT || 3000;
 
 app.use((req,res,next)=>{
   res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods','GET,POST,PATCH,DELETE');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type, Authorization');
   next();
 })
 app.use('/',express.static('./client/dist'));
@@ -38,16 +40,16 @@ app.listen(port, () => {
   console.log(`Server running at port ${port}`);
 });
 
-function nn(paramName) {
+// function nn(paramName) {
 
-}
-const nnn = function (paramName) {
+// }
+// const nnn = function (paramName) {
 
-}
+// }
 
-const obj = {
-  vvv() {
+// const obj = {
+//   vvv() {
 
-  }
-}
-const fatArrow = x => x * 2;
+//   }
+// }
+// const fatArrow = x => x * 2;
