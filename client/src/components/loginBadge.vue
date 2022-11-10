@@ -7,10 +7,10 @@ import session, { login, logout } from "../stores/session";
       <a class="button is-primary">
         <strong>Sign up</strong>
       </a>
-      <a class="button is-light" @click="login('Tim', 'Haines')"> Log in </a>
+      <router-link class="button is-light" to="login"> Log in </router-link>
     </div>
     <div v-else>
-      Welcome {{session.user.firstName}} {{session.user.lastName}}
+      Welcome {{session.user.Name}} ({{session.user.Email}})
       (<a @click="logout()">
         Logout
       </a>)
