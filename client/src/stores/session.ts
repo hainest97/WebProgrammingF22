@@ -7,7 +7,8 @@ const session = reactive({
 export function login(Email: string, Name: string, Password: string){
   session.user = {
     Email,
-    Name
+    Name,
+    Password
   };
 }
 export function logout(){

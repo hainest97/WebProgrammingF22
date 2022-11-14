@@ -11,9 +11,9 @@ export function getProduct(id: number) {
   // return getProducts().then(x=>x.find((product) => product.id === id));
 }
 
-export function deleteProduct(id: number) {
-  data.products = data.products.filter((product) => product.id === id);
-}
+// export function deleteProduct(id: number) {
+//   data.products = data.products.filter((product) => product.id !== id);
+// }
 
 export interface ListEnvelope<T> {
   products: T[]

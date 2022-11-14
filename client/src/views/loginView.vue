@@ -28,7 +28,7 @@
           <input
             class="input"
             type="text"
-            placeholder="e.g. Alex"
+            placeholder="First & Last Name"
             v-model="name"
           />
         </div>
@@ -39,8 +39,8 @@
           <input class="input" type="password" placeholder="********" v-model="password"/>
         </div>
       </div>
-
-      <button type="submit" class="button is-primary">Sign in</button>
+      <!-- type="submit"  -->
+      <button class="button is-primary">Sign in</button>
     </form>
   </div>
 </template>
