@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello World');
 })
   .get('/error', (req,res) => {
-    SSS.PORT;
+    sss.PORT;
   })
   .use('/api/v1/products', productsController)
   .use('/api/v1/cart',cartController);
