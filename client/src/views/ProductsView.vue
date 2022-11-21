@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { addProductToCart } from "@/stores/cart";
+import { isLoading } from "@/stores/session";
 import { reactive, ref, computed, watch } from "vue";
 import { getProducts, type Product } from "../stores/products";
 import { RouterLink } from "vue-router";
@@ -7,7 +8,7 @@ import { RouterLink } from "vue-router";
 const products = reactive([] as Product[]);
 getProducts().then(x => products.push(...x.products));
 const search = ref("");
-function addToCart(product: Product){
+function addToCart(product: Product) {
   addProductToCart(product);
 }
 // IMPERATIVE PROGRAMMING
@@ -47,7 +48,7 @@ function addToCart(product: Product){
         <div class="product-info">
           <p>{{ product.title }}</p>
           <p>{{ product.description }}</p>
-          <button class="button is-small is-primary is-rounded add" @click.prevent="addToCart(product)">+</button>
+          <button class="button is-small is-primary is-rounded add" :class="{ 'isLoading': isLoading}" @click.prevent="addToCart(product)">+</button>
           <p class="price">
             <span class="currency">$</span>
             <span class="amount">{{ product.price }}</span>
@@ -66,6 +67,10 @@ function addToCart(product: Product){
 }
 .add {
   float: right;
+}
+.is-disabled {
+  pointer-events: none;
+  opacity: .7;
 }
 .product {
   flex-basis: 10em;
