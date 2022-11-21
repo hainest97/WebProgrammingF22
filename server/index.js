@@ -14,6 +14,7 @@ app.use((req,res,next)=>{
 })
 app.use('/',express.static('./client/dist'));
 
+app.use(express.json());
 app.get('/', (req, res) => {
   // res.statusCode = 200;
   // res.setHeader('Content-Type', 'text/plain');

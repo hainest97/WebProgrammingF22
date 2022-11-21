@@ -9,8 +9,13 @@ http://127.0.0.1:3000/api/v1/products/17
 http://127.0.0.1:3000/api/v1/cart/tim@t
 
 ###
-POST http://127.0.0.1:3000/api/v1/cart/tim@t/6/1
+POST http://127.0.0.1:3000/api/v1/cart/tim@t
+Content-Type: application/json
 
+{
+  "quantity": 1,
+  "productId": 6
+}
 ###
 
 PATCH http://127.0.0.1:3000/api/v1/cart/tim@t/6/0
