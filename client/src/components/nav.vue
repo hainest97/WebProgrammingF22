@@ -61,6 +61,7 @@ const isCartOpen = ref(false);
         </div>
 
         <div class="navbar-end">
+          <MessageList />
           <div class="navbar-item">
             <button class="button is-primary" @click="isCartOpen = !isCartOpen">
               <strong>Cart</strong>
@@ -73,7 +74,7 @@ const isCartOpen = ref(false);
       </div>
     </div>
   </nav>
-  <MessageList />
+  
 </template>
 <style>
 .router-link-active {
