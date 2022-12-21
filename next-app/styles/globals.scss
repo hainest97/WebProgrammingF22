@@ -1,0 +1,35 @@
+.router-link-active {
+  border-bottom: 5px solid #00ff00;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: aliceblue;
+
+  .add {
+    float: right;
+  }
+  .is-disabled {
+    pointer-events: none;
+    opacity: .7;
+  }
+  .product {
+    flex-basis: 10em;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .product-info {
+    font-size: small;
+  }
+  .price {
+    display: flex;
+    align-items: flex-start;
+  }
+  .amount {
+    font-size: x-large;
+  }
+}
